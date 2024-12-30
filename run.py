@@ -65,13 +65,13 @@ if __name__ == '__main__':
         exportDirPath = f"exports/image_{oriFilename}_{formatted_datetime}"
         # logger.info('ori filename: %s' % oriFilename)
         
-        if not os.path.exists(f"{exportDirPath}"):
-            os.makedirs(f"{exportDirPath}")
-        else:
-            shutil.rmtree(f"{exportDirPath}/")
-            os.makedirs(f"{exportDirPath}/")
+        # if not os.path.exists(f"{exportDirPath}"):
+        #     os.makedirs(f"{exportDirPath}")
+        # else:
+        #     shutil.rmtree(f"{exportDirPath}/")
+        #     os.makedirs(f"{exportDirPath}/")
         
-        cv2.imwrite(f"{exportDirPath}/output.jpg", cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+        # cv2.imwrite(f"{exportDirPath}/output.jpg", cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
         
         
         # Plot the graph

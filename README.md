@@ -14,4 +14,4 @@ Link to original repo: https://github.com/jiajunhua/ildoonet-tf-pose-estimation/
    1. motion tracking for image: ```python run.py --image='[path]'```.
    2. motion tracking for video: ```python run_webcam.py --camera='[path]'```.
    3. motion tracking for realtime webcam: ```python run_webcam.py```.
-4. The exported result will be stored in ```/exports/``` with created folder.
+4. The exported result will be stored in ```/detection/exports/``` with created folder.

@@ -1,6 +1,6 @@
 # Custom ignore
 *.pth
-detection/
+detection/exports/
 exports/
 video/
 *.DS_Store

@@ -9,9 +9,9 @@ Link to original repo: https://github.com/jiajunhua/ildoonet-tf-pose-estimation/
 
 ## Run the env
 1. Browse to the root folder ```tf-pose-estimation-fyp/```.
-2. The image and video src is in directory: ```images/``` and ```video/```.
+2. The image and video src is in directory: ```detection/images/``` and ```detection/video/```.
 3. Run the command to perform motion tracking.
-   1. motion tracking for image: ```python run.py --image='[path]'```.
-   2. motion tracking for video: ```python run_webcam.py --camera='[path]'```.
+   1. motion tracking for image: ```python run.py --image='{image path}'```.
+   2. motion tracking for video: ```python run_video.py --video='{video path}'```.
    3. motion tracking for realtime webcam: ```python run_webcam.py```.
 4. The exported result will be stored in ```/detection/exports/``` with created folder.

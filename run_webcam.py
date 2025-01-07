@@ -89,7 +89,7 @@ if __name__ == "__main__":
     formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
     isRealTimeWebcam = args.camera == 0 or args.camera == "0"
     oriFilename = (
-        f"webcamRealtime"
+        f"webcam"
         if isRealTimeWebcam
         else f"webcamVideo_{args.camera.split('/')[-1]}"
     )

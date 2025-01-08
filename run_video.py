@@ -5,6 +5,7 @@ import os
 import shutil
 import datetime
 import json
+import psutil
 
 import cv2
 import numpy as np
@@ -96,6 +97,9 @@ if __name__ == "__main__":
         ## Calculate the fps
         current_time = time.time()
         fps = round(1.0 / (current_time - fps_time), 2)
+        
+        ## Access the CPU usage
+        current_cpu_load = psutil.cpu_percent()
 
         cv2.putText(
             image,
@@ -109,7 +113,7 @@ if __name__ == "__main__":
         cv2.imshow("tf-pose-estimation result", image)
 
         frame_report.append(
-            {"frame_id": frame_id, "frame_time": current_time, "fps": fps}
+            {"frame_id": frame_id, "frame_time": current_time, "fps": fps, "cpu_load": current_cpu_load}
         )
         
         frame_id += 1
@@ -124,6 +128,8 @@ if __name__ == "__main__":
     total_time = time.time() - start_time
     if len(frame_report) > 0:
         avg_fps = sum([item["fps"] for item in frame_report]) / len(frame_report)
+        avg_cpu_load = sum([item["cpu_load"] for item in frame_report]) / len(frame_report)
+        
         summary_report.append(
             {
                 "datetime": formatted_datetime,
@@ -132,6 +138,7 @@ if __name__ == "__main__":
                 "resolution": args.resolution,
                 "total_time": total_time,
                 "avg_fps": avg_fps,
+                "avg_cpu_load": avg_cpu_load,
                 "frame_report": frame_report,
             }
         )
